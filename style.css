@@ -1,0 +1,170 @@
+@font-face {
+    font-family: korpse_regular;
+    src: url(./assets/KorpusGrotesk-B.otf);
+  }
+
+  @font-face {
+    font-family: korpse_bold;
+    src: url(./assets/KorpusGrotesk-C.otf);
+  }
+
+
+body{
+    background-color: #F7F3F0;
+    
+}
+/* loading transitions */
+
+@keyframes title_transition {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /* Master settings. */
+
+  a:link{
+    text-decoration: none !important;
+  }
+
+  .small_links{
+    text-decoration: underline;
+    color: #2754C3;
+    background-color: yellow;
+  }
+
+
+  .type_h1{
+    font-family: korpse_bold;
+    font-size: 210pt;
+    line-height: 200pt;
+  }
+
+  .type_p1{
+    font-family: korpse_bold;
+    font-size: 42pt;
+    line-height: 46pt;
+    text-decoration: none !important;
+  }
+
+  .type_p2{
+    font-family: korpse_bold;
+    font-size: 24pt;
+    line-height: 28pt;
+
+  }
+
+
+  .type_c1{
+    font-family: korpse_bold;
+    font-size: 16pt;
+    line-height: 18STAYpt;
+  }
+
+  .blue_section{
+    padding: 90px;
+    background-color: #2754C3;
+    color: #F7F3F0;
+  }
+
+
+  .white_section{
+    padding: 90px;
+    color: #2754C3;
+    background-color: #F7F3F0;
+  }
+
+  .left_title{
+    color: #494949;
+  }
+
+ .img_in_section{
+  width: 100%;
+  align-items: center;
+ }
+  
+
+  
+  .with_divider{
+    border-style: none none solid none;
+    border-color: #2754C3;
+    background-color: #F7F3F0;
+  }
+
+  .code_area{
+
+    font-size: 22px;
+    background-color: #E9FFF2;
+ 
+  }
+ 
+  /* Individual settings. */
+
+.main_menu{
+
+    font-family: korpse_bold;
+    color: #2754C3;
+    background-color:#F7F3F0;
+    font-size: 24pt;
+    line-height: 40pt;
+    border-radius: 0.5px;
+    border-style: none none solid none;
+    border-color: #2754C3;
+
+}
+
+
+
+.menu_button{
+    text-align: center;
+}
+
+.big_title{
+    font-family: korpse_regular;
+    font-size: 210pt;
+    line-height: 200pt;
+    color: #2754C3;
+    text-align: center;
+    
+    
+}
+
+.top_title{
+    animation: 1.5s ease-out 0s 1 title_transition;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    /* border-radius: 0.5px;
+    border-style: none none solid none;
+    border-color: #2754C3; */
+ 
+}
+
+.space_between{
+    height: 130px;
+ 
+}
+
+.bottom_title{
+    left: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 0.5px;
+
+}
+
+.section_sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+}
+
+.about_text{
+    padding: 90px;
+    background-color: #2754C3;
+    color: #F7F3F0;
+    
+}
+
+
