@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"></script>
+    <script src="https://unpkg.com/rita"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"
+        integrity="sha512-/mZ1FHPkg6EKcxo0fKXF51ak6Cr2ocgDi5ytaTBjsQZIH/RNs6GF6+oId/vPe3eJB836T36nXwVh/WBl/cWT4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+</head>
+
+<body>
+
+
+
+
+
+    <div class="main_menu type_p2 section_sticky ">
+        <div class="row col-lg-12">
+            <div class="col-lg-4 hover_color_change">
+                <a href="./demo_docs.html">
+                    <div class="menu_button with_right_split">
+                        Docs
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 hover_color_change">
+                <a href="#">
+                    <div class="menu_button with_right_left_split">
+                        The Zine
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 hover_color_change">
+                <a href="./index.html">
+                    <div class="menu_button with_right_left_split">
+                        Home
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="blue_section type_p1">
+        Demo2: <br>
+        Grammarly Structured (Working Title)
+    </div>
+
+
+    <div class="white_section type_p1">
+        In this demo, we will dig deeper into the RiTa library and dismantle another important aspect of it: the RiTa
+        grammar program. This program enables you to open the sentence, and remake it within its original structure.
+        <br> <br> So, what will a computer-made Shakespeare's Sonnet sound like?
+    </div>
+
+    <div class="with_divider"></div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+                    What can I make after I learn this?
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+                <div>
+                    - You can create a dynamic "poem". What if a poem can change its own text, randomly, towards certain
+                    style, or <a class="small_links" href="https://rednoise.org/rita/gallery/PoetryInMotion/">triggered
+                        by some external seeds? </a><br>
+                </div>
+
+                <div>
+                    - You can rewrite <a class="small_links" href="https://rednoise.org/rita/gallery/LyricPoems/">a
+                        lyric for a song</a>, following its original syllable and rhyme structure. (To achieve a perfect
+                    rhyming effect, you might wanna co-use other RiTa features, such as <a class="small_links"
+                        href="https://rednoise.org/rita/tutorials/analyzing.html#Phonemes">phoneme analysis</a>.)
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+                    What do I need:
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+                <div>
+                    - Editor: <a class="small_links" href="https://code.visualstudio.com">Visual Studio Code</a>, with
+                    Live Server extension installed.
+                </div>
+                <div>
+                    - Your web browser: Chrome (most recommended), Safari, or Firefox.
+                </div>
+                <div>
+                    - Language: Javascript.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="blue_section type_p2">
+        1.1 <br>
+        What is grammar?
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2">
+                <div>
+
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="type_p2">
+                    In natural language, grammar are structural rules and contraints that speakers and writers use to
+                    produce language.
+                </div>
+
+                <br> <br>
+                <div class="type_p2">
+                    As human who possess at least one language system, we don't really realize the existence of grammar
+                    when we started learning how to speak back in our childhood years. Some theories believe that
+                    language users won't realize the existence of grammars and other linguistic functions until the
+                    age of 4~5, when they've reached certain level of cognitive system development.
+                </div>
+
+                <br> <br>
+
+                <div class="type_p2">
+                    We're using English grammar in this demo, but every widely-used language has its own syntax system,
+                    they can be very different.
+                </div>
+
+                <br> <br>
+
+                <div>
+                    <img class="img_in_section" src="./assets/imgs/russian_conjugation.png">
+                </div>
+
+                <br>
+
+                <div class="type_c1">
+                    Russian language has a more complex 1st conjugation rule on single/plural subjects of the sentence.
+
+                    <a class="small_links" href="https://www.lingq.com/blog/russian-verb-conjugations/">Source
+                        of this Reference</a>
+                    <br><br>
+                    Some languages, especially those who look 0% alike Latin-based languages, can form very different
+                    grammar system. For instance, Chinese doesn't have alphabet, It has no singular and plural like
+                    English, it does not have tenses in the Western language sense, it has no genders (masculine,
+                    feminine or neuter) and nouns and verbs never change, there are no changing endings. The "grammar"
+                    is a highly context-based "pattern" rather than a structural chart to be explained. Therefore, to
+                    develop computer literature program for these languages can be a very different task, usually means
+                    more trickier works, especially under the condition of which
+                    those regions can generally lack the resources of technical and academic sponsorships.
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="blue_section type_p2">
+        1.2 <br>
+        Why grammar is useful for generative literature?
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+                <div>
+                    Unlike human beings who can not only understand language as words, but also read the behavior and
+                    draw the subtle context and emotions from the conversation, computer program lacks that ability of
+                    "reading the air".
+                </div>
+                <br><br>
+                <div>
+                    However, if we break that highly-integrated human activity into some yes-or-no rules, and use
+                    quantitive value to represent those blurred style and possibilities, a computer program can
+                    "understand" natural language grammars just like a person.
+                </div>
+
+                <br><br>
+                <div>
+                    Let's start from generating one sentence.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="blue_section type_p2">
+        2.1 <br>
+        Use RiTa grammar() to generate one dynamic sentence.
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+                <div>
+
+                </div>
+                <div>
+                    We can start from generating a basic subject-verb-object sentence.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+                    Program Setting-up <br>
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+
+                <div>
+                    A basic set up: html/css/js/assets.
+                </div>
+                <br>
+                <div>
+                    You can run
+                    <a class="small_links" href="https://rednoise.org/rita/index.html">RiTa</a> on Web. RiTa has its
+                    javascript library version that you can download, or use the api link in your html header.
+                </div>
+                <br>
+
+
+                <code class="code_area">
+
+                    &lt;script src=&quot;https://unpkg.com/rita&quot;&gt;&lt;/script&gt;
+                 
+                </code>
+
+
+                <br> <br>
+
+                <div>
+                    To get it powered for our demo today, you also need to run <a class="small_links"
+                        href="https://p5js.org">p5.js</a> together with RiTa, in your html header.
+                </div>
+
+                <div>
+                    <br>
+                    <code class="code_area">
+                    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js&quot;&gt;&lt;/script&gt;
+
+                 
+                </code>
+
+
+                </div>
+
+                <br>
+                <div>
+                    Compared to Demo 1, there is one more thing we're going to be included inside the html head: a
+                    grammar.js file. The grammars on this page are written as <a class="small_links"
+                        href="https://en.wikipedia.org/wiki/JSON">JSON</a>.
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+                    Html Setting-up
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+
+                <div>
+                    Full code can be accessed here.
+                </div>
+                <br>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="demo_section">
+        <div class="white_section with_divider col-lg-12 row">
+            <div class="col-lg-3 type_p2 left_title">
+                <div>
+                    Javascript Breaking-down
+                </div>
+            </div>
+            <div class="type_p2 col-lg-9">
+
+                <div>
+                    Full code can be accessed here.
+                </div>
+                <br>
+
+                For this program, you will need two seperated javascript file. One is where your major functions live,
+                the other one is a very clean JSON sheet that serves as your "grammar pool".
+                <br> <br>
+
+                <div>
+                    ----- In your major js file -----
+                </div>
+                <br>
+
+                <code class="code_area">
+
+                    grammar = RiTa.grammar(simple_sentence);
+             
+            </code>
+                <div>
+                    - call to run RiTa.grammar method. The <code class="code_area">(simple_sentence)</code> means that,
+                    your seperated jason file should be start with the same var name. (Will unfold this soon a few
+                    paragraphs later)
+                </div>
+                <br>
+                <code class="code_area">
+
+                function mouseReleased() {<br>
+
+                    let result = grammar.expand();<br>
+                    
+          
+                    let simple_sentence = result.split("%");<br>
+                    for (let i = 0; i < lines.length; i++) {<br>
+                      lines[i] = simple_sentence[i];<br>
+                    }
+                  }
+         
+        </code>
+                <div>
+                    - Per mouse click, you'll expand a new result of this dynamic sentence. Why we have a for
+                    circulation here? It's for multiple line displaying, just to make our following steps simple. You
+                    can definitely use a one-line syntax, but I'll recommend we leave it like this as a template, and
+                    I'll share how to change the line number in the next section.
+                </div>
+                <br> <br>
+
+                <div>
+                    ----- In your grammar JSON file -----
+                </div>
+                <br>
+                <div>
+                    Now let's take a look at the actual grammar part. In the json file, follow this standard stucture to
+                    start your big bracket container. Make sure the var name ("<code
+                        class="code_area">(simple_sentence)</code> ") matches the one in the other .js file, so the
+                    other file will be able to identify it and pull the data from the sheet:
+                </div>
+
+                <br>
+                <code class="code_area">
+
+                    let simple_sentence = {
+                        
+                        [your grammar stuff] 
+                      
+                    }
+             
+            </code>
+                <br> <br>
+
+                <div>
+                    Now, how to start a simple dynamic sentence? Take the basic "subject-verb-object" structure as an
+                    example here. We're replacing the "subject" with "<code
+                        class="code_area">subject1 | subject2 | subject3 | ...</code>" here, and use a method <code
+                        class="code_area">$subject</code> to represent the dynamic placeholder. For verb and object --
+                    vice versa. The complete grammar sheet is as below:
+                </div>
+
+                <br>
+                <code class="code_area">
+
+                    let simple_sentence = {<br>
+                        
+                        start:    "$subject $verb $object.",<br>
+                        subject:  "He | She | Tom",<br>
+                        object:   "tacos | bread | pizza | donuts",<br>
+                        verb:     "eats | ate | likes | hated | can't have"<br>
+                      
+                    }
+             
+            </code>
+                <br>
+
+
+                <div>
+                    Note that all of my subject are third-person single here, I make sure my verb conjugation matches my
+                    subjects under all circumstances. <br><br>
+                    Be very careful to not create any typos with JSON! Especially: semi-colon, coma, quote marks, etc.
+                    Unlike html and css file which can tolerate old and new syntaxes and even small typos, JSON file
+                    tends to require you to make it 100% stick to the textbook.
+                </div>
+
+                <br>
+
+
+                <div>
+                    Ok! If you are ready to rock with something a bit more complex, let's make a bigger "poetic machine"
+                    in the next section...
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="blue_section type_p2">
+            2.2 <br>
+            A Poetic Machine: "Benjamin Button Closing Lines" Rework
+        </div>
+        <div class="demo_section">
+            <div class="white_section with_divider col-lg-12 row">
+                <div class="col-lg-3 type_p2 left_title">
+                    <div>
+
+                    </div>
+                </div>
+                <div class="type_p2 col-lg-9">
+
+                    <div>
+                        The movie <a class="small_links"
+                            href="https://en.wikipedia.org/wiki/The_Curious_Case_of_Benjamin_Button_(film)">The Curious
+                            Case of Benjamin Button</a> depicted the life of Benjamin Button, a fictional role that when
+                        his mind ages, his physical body age grows reversely. He was born as an old man and died looking
+                        like a baby. The movie featured his bizarred life journey and how he witnesses other people's
+                        life as
+                        his own life rewinds towards an opposite direction.
+                    </div>
+                    <br>
+                    <div>The <a class="small_links"
+                            href="https://www.goodreads.com/work/quotes/56454126-the-curious-case-of-benjamin-button-screenplay">closing
+                            lines</a> of the movie was a beautiful monologue that serves as a montage of all the
+                        characters:</div>
+
+                    <br>
+
+                    <div>Some people were born to sit by a river. <br>
+                        Some get struck by lightning.<br>
+                        Some have an ear for music.<br>
+                        Some are artists.<br>
+                        Some swim.<br>
+                        Some know buttons.<br>
+                        Some know Shakespeare.<br>
+                        Some are mothers.<br>
+                        And some people - dance.
+                    </div>
+
+
+
+                    <br>
+
+                    <div>
+                        Now, what if we can make this poem start moving, as it is partly structured, but also we see the
+                        beauty of "randomized life stories"?
+                    </div>
+
+
+                    <br>
+
+                    <div>
+                        The major part of the code is generally the same. Here are a few significant changes in your
+                        JSON part:
+                    </div>
+                    <br>
+                    <div>
+                        ----- In your grammar JSON file -----
+                    </div>
+
+
+                    <br>
+                    <code class="code_area">
+
+                    start: "$line0 % $line1 % $line2  % $line3 % $line4  % $line5  % $line6  % $line7",
+             
+                </code>
+                    <br>
+
+                    <br>
+                    <div>
+                        You might already discover that, for RiGrammar object, you can literally make one <code
+                            class="code_area">$method</code> inside another <code class="code_area">$method</code>, to
+                        create more branching possibilities of your poetic machine.
+                    </div>
+                    <br>
+              
+                    <div>
+                       The <code class="code_area">%</code> represents a line-changing moment, it'll be pulled by the main js file as it'll expand in a correct, once in a line format.
+                    </div>
+                    <br>
+
+                    <div>
+                        Besides, you can also create a logic element inside one method, such as the syntax here:
+                     </div>
+
+                     <br>
+                     <code class="code_area">
+ 
+                        'line2': '$first_word  $be ($bad_at | $good_at) $verb_ing;',
+              
+                 </code>
+                     <br>
+                
+                     <div>
+                        It means either the method <code class="code_area">$bad_at</code> or <code class="code_area">$good_at</code> will be chosen when it hits this part, the ratio of possibility is 50/50.
+                      </div>
+                  
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+</body>
+
+</html>
