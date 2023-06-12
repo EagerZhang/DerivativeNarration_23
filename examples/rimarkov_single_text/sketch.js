@@ -3,7 +3,7 @@ let x = 160, y = 240;
 
 function preload() {
 
-    txt1 = loadStrings('ihaveadream.txt');
+    txt1 = loadStrings('i_have_a_dream.txt');
   }
 
 function setup() {
@@ -31,7 +31,7 @@ function drawText() {
 }
 
 function mouseClicked() {
-  lines = markov.generate(4);
+  lines = markov.generate(2);
   x = y = 40;
   drawText();
   print(lines);
